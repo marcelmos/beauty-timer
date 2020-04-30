@@ -1,0 +1,22 @@
+* {
+    box-sizing: content-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body{
+    background-image: url("../img/background.jpg");
+}
+
+#timerDisplay{
+    font-size: 10vw;
+    text-align: center;
+    color: #fff;
+    text-shadow: 5px 5px 10px #303030;
+    display: flex;
+    justify-content: center;
+}
+
+td>h1{
+    margin: 0;
+    padding: 0;
+}

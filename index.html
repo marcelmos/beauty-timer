@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Timer</title>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/timeSetBtnStyle.css">
+
+    </head>
+    <body>
+        <div id="timerDisplay">
+            <table border="1">
+                <tr class="btn">
+                    <td><div class="incrementTime" id="addHour" onclick="setTime(this.id)"><i class="fa fa-angle-up"></i></div></td>
+                    <td></td>
+                    <td><div class="incrementTime" id="addMinutes" onclick="setTime(this.id)"><i class="fa fa-angle-up"></i></div></td>
+                    <td></td>
+                    <td><div class="incrementTime" id="addSecounds" onclick="setTime(this.id)"><i class="fa fa-angle-up"></i></div></td>
+                </tr>
+                <tr>
+                    <td><h1 id="hourTime">00</h1></td>
+                    <td><h1>:</h1></td>
+                    <td><h1 id="minutesTime">00</h1></td>
+                    <td><h1>:</h1></td>
+                    <td><h1 id="secoundsTime">00</h1></td>
+                </tr>
+                <tr class="btn">
+                    <td><div class="decremenntTime" id="subHour" onclick="setTime(this.id)"><i class="fa fa-angle-down"></i></div></td>
+                    <td></td>
+                    <td><div class="decremenntTime" id="subMinutes" onclick="setTime(this.id)"><i class="fa fa-angle-down"></i></div></td>
+                    <td></td>
+                    <td><div class="decremenntTime" id="subSecounds" onclick="setTime(this.id)"><i class="fa fa-angle-down"></i></div></td>
+                </tr>
+            </table>
+        </div>
+        <button onclick="startTimer()">Start</button>
+        <button onclick="stopTimer()">Stop</button>
+    </body>
+
+    <script type="text/javascript" src="js/main.js"></script>
+    <!-- <script type="text/javascript" src="js/setTime.js"></script> -->
+</html>
