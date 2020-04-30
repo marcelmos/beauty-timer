@@ -4,9 +4,13 @@ var idInterwalu;
 //     minutesSet = 0,
 //     secoundsSet = 0;
 
-var houers = hourSet,
-    minutes = minutesSet,
-    secounds = secoundsSet;
+// var houers = hourSet,
+//     minutes = minutesSet,
+//     secounds = secoundsSet;
+
+var houers = document.getElementById("hour").value,
+    minutes = document.getElementById("minutes").value,
+    secounds = document.getElementById("secounds").value;
 
 var displayHour = document.getElementById("hourTime"),
     displayMinutes = document.getElementById("minutesTime"),
@@ -21,6 +25,10 @@ function startTimer(){
 
 function changeBackground(){
     var display = document.getElementById("timerDisplay");
+
+    houers = ("0" + houers).slice(-2);
+    minutes = ("0" + minutes).slice(-2);
+    secounds = ("0" + secounds).slice(-2);
 
     if(secounds>0){
         secounds--;

@@ -9,11 +9,12 @@
         <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/timeSetBtnStyle.css">
+        <link rel="stylesheet" href="css/btnStyle.css">
 
     </head>
     <body>
         <div id="timerDisplay">
-            <table border="1">
+            <table border="0">
                 <tr class="btn">
                     <td><div class="incrementTime" id="addHour" onclick="setTime(this.id)"><i class="fa fa-angle-up"></i></div></td>
                     <td></td>
@@ -37,8 +38,27 @@
                 </tr>
             </table>
         </div>
-        <button onclick="startTimer()">Start</button>
-        <button onclick="stopTimer()">Stop</button>
+        <br>
+        <div id="controls">
+            <a href="#" id="start" onclick="startTimer()">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Start
+            </a>
+            <a href="#" id="stop" onclick="stopTimer()">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Stop
+            </a>
+        </div>
+        <h3>Set timer:</h3>
+        <input type="number" placeholder="Hours" id="hour">:<input type="number" placeholder="Minutes" id="minutes">:<input type="number" placeholder="Secounds" id="secounds">
+
+        <p><small>To insert new time refresh app.</small></p>
     </body>
 
     <script type="text/javascript" src="js/main.js"></script>
