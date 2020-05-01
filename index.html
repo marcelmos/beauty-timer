@@ -40,23 +40,23 @@
         </div>
         <br>
         <div id="controls">
-            <a href="#" id="start" onclick="startTimer()">
+            <button id="start" onclick="startTimer()">
                 <span></span>
                 <span></span>
                 <span></span>
                 <span></span>
                 Start
-            </a>
-            <a href="#" id="stop" onclick="stopTimer()">
+            </button>
+            <button id="stop" disabled onclick="stopTimer()">
                 <span></span>
                 <span></span>
                 <span></span>
                 <span></span>
                 Stop
-            </a>
+            </button>
         </div>
         <h3>Set timer:</h3>
-        <input type="number" placeholder="Hours" id="hour">:<input type="number" placeholder="Minutes" id="minutes">:<input type="number" placeholder="Secounds" id="secounds">
+        <input type="number" placeholder="Hours" id="hour" onchange="setHours()">:<input type="number" placeholder="Minutes" id="minutes" onchange="setMinutes()">:<input type="number" placeholder="Secounds" id="secounds" onchange="setSecounds()">
 
         <p><small>To insert new time refresh app.</small></p>
     </body>

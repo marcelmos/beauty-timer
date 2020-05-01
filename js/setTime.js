@@ -1,3 +1,8 @@
+/*
+Script for buttons below and above timer sections
+NOT WORKING YET
+*/
+
 var hourSet = 00,
     minutesSet = 00,
     secoundsSet = 00;

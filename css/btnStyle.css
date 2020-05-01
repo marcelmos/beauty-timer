@@ -6,7 +6,7 @@
 }
 
 #stop{
-    background: rgba(255, 0, 0, 0.1);
+    background: rgba(41, 41, 41, 0.25);
 }
 
 #start:after{
@@ -17,7 +17,8 @@
     background: linear-gradient(90deg, transparent, rgba(255, 0, 0, 0.4), transparent);
 }
 
-a{
+button{
+    border: solid 1px rgba(255, 255, 255, 0.25);
     position: relative;
     padding: 25px 50px;
     text-decoration: none;
@@ -30,7 +31,7 @@ a{
     box-shadow: 0 5px 5px rgba(0,0,0,.2);
 }
 
-a:before{
+button:before{
     content: '';
     position: absolute;
     top: 0;
@@ -40,7 +41,7 @@ a:before{
     background: rgba(255, 255, 255, .1);
 }
 
-a:after{
+button:after{
     content: '';
     position: absolute;
     top: 0;
@@ -51,17 +52,17 @@ a:after{
     transition-delay: 0.5s;
 }
 
-a:hover:after{
+button:hover:after{
     left: 100%;
 }
 
-a span{
+button span{
     position: absolute;
     display: block;
     transition: 0.5s ease;
 }
 
-a span:nth-child(1){
+button span:nth-child(1){
     top: 0;
     left: 0;
     width: 0;
@@ -69,78 +70,78 @@ a span:nth-child(1){
 }
 
 
-a:hover span:nth-child(1){
+button:hover span:nth-child(1){
     width: 100%;
     transform: translateX(100%);
 }
 
-a span:nth-child(3){
+button span:nth-child(3){
     bottom: 0;
     right: 0;
     width: 0;
     height: 1px;
 }
 
-a:hover span:nth-child(3){
+button:hover span:nth-child(3){
     width: 100%;
     transform: translateX(-100%);
 }
 
-a span:nth-child(2){
+button span:nth-child(2){
     top: 0;
     left: 0;
     width: 1px;
     height: 0;
 }
 
-a:hover span:nth-child(2){
+button:hover span:nth-child(2){
     height: 100%;
     transform: translateY(100%);
 }
 
-a span:nth-child(4){
+button span:nth-child(4){
     bottom: 0;
     right: 0;
     width: 1px;
     height: 0;
 }
 
-a:hover span:nth-child(4){
+button:hover span:nth-child(4){
     height: 100%;
     transform: translateY(-100%);
 }
 
 /* START */
-a#start span:nth-child(1){
+button#start span:nth-child(1){
     background: #33b90a;
 }
 
-a#start span:nth-child(3){
+button#start span:nth-child(3){
     background: #33b90a;
 }
 
-a#start span:nth-child(2){
+button#start span:nth-child(2){
     background: #33b90a;
 }
 
-a#start span:nth-child(4){
+button#start span:nth-child(4){
     background: #33b90a;
 }
 
 
 /* STOP */
-a#stop span:nth-child(1){
+button#stop span:nth-child(1){
     background: #ff0000;
 }
 
-a#stop span:nth-child(3){
+button#stop span:nth-child(3){
     background: #ff0000;
 }
 
-a#stop span:nth-child(2){
+button#stop span:nth-child(2){
     background: #ff0000;
 }
 
-a#stop span:nth-child(4){
+button#stop span:nth-child(4){
     background: #ff0000;
 }
