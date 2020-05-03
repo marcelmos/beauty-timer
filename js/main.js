@@ -1,110 +1,122 @@
-var idInterwalu;
-
-/*
-var hourSet = 0,
-    minutesSet = 0,
-    secoundsSet = 0;
-                                // Variables for buttons above and below timer sections
-var houers = hourSet,
-    minutes = minutesSet,
-    secounds = secoundsSet;
-*/
+let idInterwalu;
 
 // Take sections of timer
-var displayHour = document.getElementById("hourTime"),
+const displayHour = document.getElementById("hourTime"),
     displayMinutes = document.getElementById("minutesTime"),
     displaySecounds = document.getElementById("secoundsTime");
 
 // Take control buttons
-var btnStart = document.getElementById("start");
-var btnStop = document.getElementById("stop");
+const btnStart = document.getElementById("start"),
+    btnStop = document.getElementById("stop");
 
-var houers,
-    minutes,
-    secounds;
+let houers = 0,
+    minutes = 0,
+    secounds = 0;
 
-const maxMinutes = 59,
-    maxSecounds = 59;
-
-// Set value for timer from input fields
-function setHours(){
-    if(btnStart.disabled == false)
-    houers = document.getElementById("hour").value;
-
-    displayHour.innerHTML = houers;
+//Render clear timer display
+window.onload = function(){
+    displayHour.innerHTML = "00";
+    displayMinutes.innerHTML = ": 00 :";
+    displaySecounds.innerHTML = "00";
 }
 
-function setMinutes(){
-    if(btnStart.disabled == false)
-    minutes = document.getElementById("minutes").value;
+// Set value for timer from buttons + update timer display
+function setTime(clicked_id){
+    if(clicked_id == "addHour"){
+        houers = houers + 1;
+    }
+    if(clicked_id == "subHour"){
+        houers = houers - 1;
+        if(houers < 0){
+            houers = 0;
+        }
+    }
+    if(clicked_id == "addMinutes"){
+        minutes = minutes + 1;
+        if(minutes>59){
+            minutes = 0;
+        }
+    }
+    if(clicked_id == "subMinutes"){
+        minutes = minutes - 1;
+        if(minutes<0){
+            minutes = 59;
+        }
+    }
+    if(clicked_id == "addSecounds"){
+        secounds = secounds + 1;
+        if(secounds>59){
+            secounds = 0;
+        }
+    }
+    if(clicked_id == "subSecounds"){
+        secounds = secounds - 1;
+        if(secounds<0){
+            secounds = 59;
+        }
+    }
 
-    displayMinutes.innerHTML = minutes;
-}
+    // Set numbers to double e.g. 00 or 09
+     prependedHouers = String(houers).padStart(2, '0');
+     prependedMinutes = String(minutes).padStart(2, '0');
+     prependedSecounds = String(secounds).padStart(2, '0');
 
-function setSecounds(){
-    if(btnStart.disabled == false)
-    secounds = document.getElementById("secounds").value;
-
-    displaySecounds.innerHTML = secounds;
+    //Render in timer display
+    displayHour.innerHTML = prependedHouers;
+    displayMinutes.innerHTML = ": "+prependedMinutes+" :";
+    displaySecounds.innerHTML = prependedSecounds;
 }
 
 // Start count down
 function startTimer(){
     idInterwalu = setInterval(changeTime, 1000);
+
+    //Change button status
     btnStart.disabled = true;
     btnStart.style.backgroundColor = "rgba(41, 41, 41, 0.25)";
     btnStop.disabled = false;
-    btnStop.style.backgroundColor = "rgba(255, 0, 0, 0.1)";
+    btnStop.style.backgroundColor = "rgba(255, 0, 0, 0.2)";
 }
 
 // Set new time value
 function changeTime(){
 
-    // Set numbers to double e.g. 00 or 09
-    if(houers<10){
-        houers = ("0" + houers).slice(-2);
-    }
-    minutes = ("0" + minutes).slice(-2);
-    secounds = ("0" + secounds).slice(-2);
-
-    // If minutes or secounds are bigger then 59 set to 59
-    if(minutes>59){
-        minutes = 59;
-    }
-    if(secounds>59){
-        secounds = 59;
-    }
-
+    //Decrement appropriate timer section
     if(secounds>0){
         secounds--;
-        secounds = ("0" + secounds).slice(-2);
     }
     else if(minutes>0 && secounds<=0){
         minutes--;
-        minutes = ("0" + minutes).slice(-2);
-        secounds = maxSecounds;
+        secounds = 59;
     }
     else if(houers>0 && minutes<=0 && secounds<=0){
         houers--;
-        houers = ("0" + houers).slice(-2);
-        minutes = maxMinutes;
-        secounds = maxSecounds;
+        minutes = 59;
+        secounds = 59;
     }
 
     if(houers<=0 && minutes<=0 && secounds<=0){
         stopTimer();
     }
 
-    displayHour.innerHTML = houers;
-    displayMinutes.innerHTML = minutes;
-    displaySecounds.innerHTML = secounds;
+    // Set numbers to double e.g. 00 or 09
+    prependedHouers = String(houers).padStart(2, '0');
+    prependedMinutes = String(minutes).padStart(2, '0');
+    prependedSecounds = String(secounds).padStart(2, '0');
+
+    //Render in timer display
+    displayHour.innerHTML = prependedHouers;
+    displayMinutes.innerHTML = ": "+prependedMinutes+" :";
+    displaySecounds.innerHTML = prependedSecounds;
 }
 
 // Stop count down
 function stopTimer(){
     clearInterval(idInterwalu);
+
+    //Change button status
     btnStart.disabled = false;
-    btnStart.style.backgroundColor = "rgba(51, 185, 10, 0.1)";
+    btnStart.style.backgroundColor = "rgba(51, 185, 10, 0.2)";
     btnStop.disabled = true;
     btnStop.style.backgroundColor = "rgba(41, 41, 41, 0.25)";
 }

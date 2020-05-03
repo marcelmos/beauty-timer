@@ -10,36 +10,33 @@
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/timeSetBtnStyle.css">
         <link rel="stylesheet" href="css/btnStyle.css">
+        <link rel="stylesheet" href="css/timerDisplayStyle.css">
 
     </head>
     <body>
-        <div id="timerDisplay">
-            <table border="0">
-                <tr class="btn">
-                    <td><div class="incrementTime" id="addHour" onclick="setTime(this.id)"><i class="fa fa-angle-up"></i></div></td>
-                    <td></td>
-                    <td><div class="incrementTime" id="addMinutes" onclick="setTime(this.id)"><i class="fa fa-angle-up"></i></div></td>
-                    <td></td>
-                    <td><div class="incrementTime" id="addSecounds" onclick="setTime(this.id)"><i class="fa fa-angle-up"></i></div></td>
-                </tr>
-                <tr>
-                    <td><h1 id="hourTime">00</h1></td>
-                    <td><h1>:</h1></td>
-                    <td><h1 id="minutesTime">00</h1></td>
-                    <td><h1>:</h1></td>
-                    <td><h1 id="secoundsTime">00</h1></td>
-                </tr>
-                <tr class="btn">
-                    <td><div class="decremenntTime" id="subHour" onclick="setTime(this.id)"><i class="fa fa-angle-down"></i></div></td>
-                    <td></td>
-                    <td><div class="decremenntTime" id="subMinutes" onclick="setTime(this.id)"><i class="fa fa-angle-down"></i></div></td>
-                    <td></td>
-                    <td><div class="decremenntTime" id="subSecounds" onclick="setTime(this.id)"><i class="fa fa-angle-down"></i></div></td>
-                </tr>
-            </table>
+        <div class="timerDisplay">
+            <h1>
+                <div class="timeSection">
+                    <div class="incrementTime" id="addHour" onclick="setTime(this.id)"><i class="fa fa-angle-up"></i></div>
+                    <div id="hourTime"></div>
+                    <div class="decremenntTime" id="subHour" onclick="setTime(this.id)"><i class="fa fa-angle-down"></i></div>
+                </div>
+
+                <div class="timeSection">
+                    <div class="incrementTime" id="addMinutes" onclick="setTime(this.id)"><i class="fa fa-angle-up"></i></div>
+                    <div id="minutesTime"></div>
+                    <div class="decremenntTime" id="subMinutes" onclick="setTime(this.id)"><i class="fa fa-angle-down"></i></div>
+                </div>
+
+                <div class="timeSection">
+                    <div class="incrementTime" id="addSecounds" onclick="setTime(this.id)"><i class="fa fa-angle-up"></i></div>
+                    <div id="secoundsTime"></div>
+                    <div class="decremenntTime" id="subSecounds" onclick="setTime(this.id)"><i class="fa fa-angle-down"></i></div>
+                </div>
+            </h1>
         </div>
         <br>
-        <div id="controls">
+        <div class="controls">
             <button id="start" onclick="startTimer()">
                 <span></span>
                 <span></span>
@@ -55,10 +52,10 @@
                 Stop
             </button>
         </div>
-        <h3>Set timer:</h3>
+        <!-- <h3>Set timer:</h3>
         <input type="number" placeholder="Hours" id="hour" onchange="setHours()">:<input type="number" placeholder="Minutes" id="minutes" onchange="setMinutes()">:<input type="number" placeholder="Secounds" id="secounds" onchange="setSecounds()">
 
-        <p><small>To insert new time refresh app.</small></p>
+        <p><small>To insert new time refresh app.</small></p> -->
     </body>
 
     <script type="text/javascript" src="js/main.js"></script>

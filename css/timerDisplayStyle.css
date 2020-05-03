@@ -1,0 +1,17 @@
+.timerDisplay{
+    width: 100%;
+    font-size: 6vw;
+    text-align: center;
+    color: #fff;
+    text-shadow: 5px 5px 10px #303030;
+    justify-content: center;
+}
+
+.timerDisplay>h1>div{
+    display: inline-block;
+}
+
+.timeSection{
+    display: table-row;
+}
+
