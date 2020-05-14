@@ -1,17 +1,17 @@
-let idInterwalu;
+let interval_Id;
 
 // Take sections of timer
-const displayHour = document.getElementById("hourTime"),
-    displayMinutes = document.getElementById("minutesTime"),
-    displaySecounds = document.getElementById("secoundsTime");
+const displayHour = document.getElementById("hourTime");
+const displayMinutes = document.getElementById("minutesTime");
+const displaySecounds = document.getElementById("secoundsTime");
 
 // Take control buttons
-const btnStart = document.getElementById("start"),
-    btnStop = document.getElementById("stop");
+const btnStart = document.getElementById("start");
+const btnStop = document.getElementById("stop");
 
-let houers = 0,
-    minutes = 0,
-    secounds = 0;
+let hours = 0;
+let minutes = 0;
+let secounds = 0;
 
 //Render clear timer display
 window.onload = function(){
@@ -23,12 +23,12 @@ window.onload = function(){
 // Set value for timer from buttons + update timer display
 function setTime(clicked_id){
     if(clicked_id == "addHour"){
-        houers = houers + 1;
+        hours = hours + 1;
     }
     if(clicked_id == "subHour"){
-        houers = houers - 1;
-        if(houers < 0){
-            houers = 0;
+        hours = hours - 1;
+        if(hours < 0){
+            hours = 0;
         }
     }
     if(clicked_id == "addMinutes"){
@@ -57,19 +57,19 @@ function setTime(clicked_id){
     }
 
     // Set numbers to double e.g. 00 or 09
-     prependedHouers = String(houers).padStart(2, '0');
-     prependedMinutes = String(minutes).padStart(2, '0');
-     prependedSecounds = String(secounds).padStart(2, '0');
+     preparedHours = String(hours).padStart(2, '0');
+     preparedMinutes = String(minutes).padStart(2, '0');
+     preparedSecounds = String(secounds).padStart(2, '0');
 
     //Render in timer display
-    displayHour.innerHTML = prependedHouers;
-    displayMinutes.innerHTML = ": "+prependedMinutes+" :";
-    displaySecounds.innerHTML = prependedSecounds;
+    displayHour.innerHTML = preparedHours;
+    displayMinutes.innerHTML = ": "+preparedMinutes+" :";
+    displaySecounds.innerHTML = preparedSecounds;
 }
 
 // Start count down
 function startTimer(){
-    idInterwalu = setInterval(changeTime, 1000);
+    interval_Id = setInterval(changeTime, 1000);
 
     //Change button status
     btnStart.disabled = true;
@@ -89,30 +89,30 @@ function changeTime(){
         minutes--;
         secounds = 59;
     }
-    else if(houers>0 && minutes<=0 && secounds<=0){
-        houers--;
+    else if(hours>0 && minutes<=0 && secounds<=0){
+        hours--;
         minutes = 59;
         secounds = 59;
     }
 
-    if(houers<=0 && minutes<=0 && secounds<=0){
+    if(hours<=0 && minutes<=0 && secounds<=0){
         stopTimer();
     }
 
     // Set numbers to double e.g. 00 or 09
-    prependedHouers = String(houers).padStart(2, '0');
-    prependedMinutes = String(minutes).padStart(2, '0');
-    prependedSecounds = String(secounds).padStart(2, '0');
+    preparedHours = String(hours).padStart(2, '0');
+    preparedMinutes = String(minutes).padStart(2, '0');
+    preparedSecounds = String(secounds).padStart(2, '0');
 
     //Render in timer display
-    displayHour.innerHTML = prependedHouers;
-    displayMinutes.innerHTML = ": "+prependedMinutes+" :";
-    displaySecounds.innerHTML = prependedSecounds;
+    displayHour.innerHTML = preparedHours;
+    displayMinutes.innerHTML = ": "+preparedMinutes+" :";
+    displaySecounds.innerHTML = preparedSecounds;
 }
 
 // Stop count down
 function stopTimer(){
-    clearInterval(idInterwalu);
+    clearInterval(interval_Id);
 
     //Change button status
     btnStart.disabled = false;

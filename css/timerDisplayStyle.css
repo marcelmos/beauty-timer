@@ -5,10 +5,13 @@
     color: #fff;
     text-shadow: 5px 5px 10px #303030;
     justify-content: center;
+
 }
 
 .timerDisplay>h1>div{
     display: inline-block;
+    font-feature-settings: "tnum";
+    font-variant-numeric: tabular-nums;
 }
 
 .timeSection{
