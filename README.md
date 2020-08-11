@@ -12,7 +12,7 @@ Or timer just finished count down.
 
 ## How run app
 Just open index.html in your web browser.
-or use click this [LINK](https://codesandbox.io/s/interesting-payne-kh0y6) for live preview.
+Or use click this [LINK](https://codesandbox.io/s/interesting-payne-kh0y6) for live preview.
 
 ## Future
 In future I want to add "RESET" button for clear timer.
